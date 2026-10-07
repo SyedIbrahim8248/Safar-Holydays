@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safar Holidays | Tour Packages for All Indian States and Low-Cost International Trips</title>
+<meta name="description" content="Book tour packages to all 28 Indian states and 24 low-cost international destinations with Safar Holidays.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6e8;--ink:#1b1740;--muted:#5d5a7d;--card:#fffdf9;--line:#e8dcc6;--pri:#2a2370;--pri-ink:#fff;--sun:#ff8a00;--sun-ink:#1b1740;--ok:#1c7a4a;--bad:#b3261e;
+--head:"Bricolage Grotesque","Noto Sans Devanagari","Trebuchet MS",sans-serif;--body:"Figtree","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110f2b;--ink:#f0eefc;--muted:#a9a5cf;--card:#1a1740;--line:#322e66;--pri:#9d93ff;--pri-ink:#110f2b;--ok:#5fd394;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#110f2b;--ink:#f0eefc;--muted:#a9a5cf;--card:#1a1740;--line:#322e66;--pri:#9d93ff;--pri-ink:#110f2b;--ok:#5fd394;--bad:#ff8a80}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--body);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
+a{color:var(--pri)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+section>.wrap>h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--pri);color:var(--pri-ink);border:0;border-radius:10px;padding:12px 22px;font:600 1rem var(--body);cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.12)}
+.btn.sun{background:var(--sun);color:var(--sun-ink)}
+.btn.wa{background:#1fa855;color:#fff}
+.btn.line{background:transparent;color:var(--pri);border:1.5px solid var(--pri)}
+.offer{background:var(--sun);color:var(--sun-ink);text-align:center;padding:8px 12px;font-weight:600;font-size:.95rem}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:18px;height:62px}
+.logo{font:800 1.3rem var(--head);color:var(--ink);text-decoration:none;margin-right:auto}
+nav a.l{color:var(--muted);text-decoration:none;font-weight:600}
+nav a.l:hover{color:var(--pri)}
+.icon{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 12px;cursor:pointer;font:inherit}
+@media(max-width:800px){nav a.l{display:none}}
+/* hero */
+.hero{color:#fff;padding:80px 0 96px;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.14) 1.5px,transparent 0) 0 0/26px 26px,linear-gradient(150deg,#1b1740 0%,#2a2370 50%,#8a3ffc 120%)}
+.hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--sun);display:inline-block;min-width:5ch;transition:opacity .35s}
+.hero p{max-width:52ch;margin:16px 0 26px;color:#e3e0ff}
+.search{background:var(--card);color:var(--ink);border-radius:16px;padding:16px;display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:12px;align-items:end;max-width:900px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.search label{display:grid;gap:4px;font-weight:600;font-size:.9rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+@media(max-width:800px){.search{grid-template-columns:1fr 1fr}.search label:first-child,.search .btn{grid-column:1/-1}}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px}
+.stats div{font-size:.95rem;color:#cfcbff}
+.stats b{display:block;font:800 1.8rem var(--head);color:#fff}
+/* tabs, filters */
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button{flex:1;min-width:200px;padding:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font:700 1.05rem var(--head);cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--pri);background:var(--pri);color:var(--pri-ink)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-right:auto}
+.chips button,.qch button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 16px;border-radius:999px;cursor:pointer;font:inherit}
+.chips button[aria-pressed="true"],.qch button[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink);border-color:var(--sun);font-weight:600}
+.tools label{display:flex;gap:8px;align-items:center}
+.tools select{width:auto}
+.count{color:var(--muted);margin:0 0 14px;font-weight:600}
+/* boarding-pass cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:22px}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pic{height:140px;display:grid;place-items:center;font-size:3.5rem;position:relative}
+.loc{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);color:#1b1740;border-radius:6px;padding:2px 10px;font:600 .82rem var(--body)}
+.heart{position:absolute;top:8px;right:10px;border:0;background:rgba(255,255,255,.92);color:#c0392b;width:36px;height:36px;border-radius:50%;font-size:1.15rem;cursor:pointer}
+.low{position:absolute;left:12px;bottom:10px;background:#1c7a4a;color:#fff;border-radius:6px;padding:1px 9px;font-size:.78rem;font-weight:600}
+.body{padding:16px 18px 0;display:flex;flex-direction:column;gap:6px;flex:1}
+.pkg h3{font-size:1.2rem}
+.pkg p{margin:0;color:var(--muted);font-size:.94rem}
+.meta{color:var(--muted);font-size:.88rem;display:flex;gap:12px}
+.sep{position:relative;border-top:2px dashed var(--line);margin:12px -18px 0}
+.sep::before,.sep::after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.sep::before{left:-11px}.sep::after{right:-11px}
+.price{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+.price b{font:800 1.3rem var(--head)}
+.price small{color:var(--muted)}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px;grid-column:1/-1}
+.more{text-align:center;margin-top:26px}
+/* sections */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.why div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px}
+.why b{display:block;font:700 1.08rem var(--head);margin:6px 0 4px}
+.why span{font-size:1.9rem}
+.why p{margin:0;color:var(--muted);font-size:.95rem}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;max-width:720px}
+.quote p{font-size:1.2rem;margin:0 0 10px}
+.qnav{display:flex;gap:10px;margin-top:14px}
+details{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;max-width:780px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:800px){.contact{grid-template-columns:1fr}}
+.info{background:var(--pri);color:var(--pri-ink);border-radius:16px;padding:26px;display:grid;gap:12px;align-content:start}
+.info a{color:var(--pri-ink);font-weight:600}
+form{display:grid;gap:12px}
+label{display:grid;gap:4px;font-weight:600}
+.err{color:var(--bad);font-size:.88rem;font-weight:400;min-height:1.1em;margin:0}
+.msg{font-weight:600;min-height:1.4em;margin:0}
+.msg.ok{color:var(--ok)}
+footer{background:#14113a;color:#d6d3f5;padding:32px 0;text-align:center}
+footer a{color:#fff}
+dialog{border:0;border-radius:18px;padding:0;max-width:540px;width:calc(100% - 28px);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.dlg{padding:24px;display:grid;gap:12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.total{background:var(--bg);border-radius:10px;padding:12px 14px;font-weight:700;display:grid;gap:2px}
+.total div{display:flex;justify-content:space-between}
+.acts{display:flex;gap:10px;flex-wrap:wrap}
+.close{justify-self:end;background:none;border:0;font-size:1.6rem;color:var(--ink);cursor:pointer}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:10px;z-index:15}
+.fab a,.fab button{width:52px;height:52px;border-radius:50%;border:0;display:grid;place-items:center;font-size:1.5rem;text-decoration:none;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.fab a{background:#1fa855;color:#fff}
+.fab button{background:var(--sun);color:var(--sun-ink)}
+#top{display:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 em{transition:none}}
+.qch{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.hi{font-weight:600}
+.rate{font-size:.88rem;color:var(--muted)}.rate b{color:var(--ink)}
+.inc{font-size:.8rem;color:var(--muted)}
+.price s{color:var(--muted);font-size:.9rem}
+.off{background:#1c7a4a;color:#fff;border-radius:6px;padding:1px 7px;font-size:.78rem;font-weight:600;margin-left:4px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;counter-reset:s}
+.steps div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px}
+.steps div::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sun);color:var(--sun-ink);font:800 1rem var(--head);margin-bottom:10px}
+.steps b{display:block;font:700 1.1rem var(--head);margin-bottom:4px}
+.steps p{margin:0;color:var(--muted)}
+.trust{display:flex;gap:8px 26px;flex-wrap:wrap;justify-content:center;margin-top:26px;color:var(--muted);font-weight:600}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.qc{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--sun);border-radius:14px;padding:20px}
+.qc p{margin:0 0 10px;font-size:1.12rem}
+.qc small{color:var(--muted)}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;text-align:left;margin-bottom:26px;max-width:760px;margin-inline:auto}
+.fcols a{display:block;margin:4px 0;color:#d6d3f5;text-decoration:none}
+.fcols a:hover{color:#fff}
+.fcols b{color:#fff}
+</style>
+</head>
+<body>
+<div class="offer">Big savings: up to 40% off all trips. Extra 5% off with code SAFAR5. Group discounts up to 10%. Call +91 62009 98924</div>
+<header><div class="wrap"><nav aria-label="Main">
+  <a class="logo" href="#home">🧭 Safar Holidays</a>
+  <a class="l" href="#trips">Trips</a><a class="l" href="#why">Why us</a><a class="l" href="#quotes">Quotes</a><a class="l" href="#reviews">Reviews</a><a class="l" href="#faq">FAQ</a><a class="l" href="#contact">Contact</a>
+  <button class="icon" id="wishBtn" type="button" aria-label="Show saved trips">♥ <span id="wishCount">0</span></button>
+  <button class="icon" id="theme" type="button" aria-label="Switch light and dark theme">Theme</button>
+</nav></div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+  <h1>Pack your bags for <em id="word">Goa</em></h1>
+  <p>Hand-planned holidays in all 28 Indian states and 24 low-cost international destinations. Hotels, transfers and sightseeing included.</p>
+  <p class="hi" style="margin-top:-12px;color:var(--sun);font-size:1.15rem">सफ़र की शुरुआत यहीं से, बजट में।</p>
+  <form class="search" id="search" aria-label="Find a trip">
+    <label>Where do you want to go?<input id="q" placeholder="Kerala, Meghalaya, Bali..." list="places"></label>
+    <label>Trip type<select id="qtype"><option value="all">Any</option><option value="beach">Beach</option><option value="hills">Hills</option><option value="heritage">Heritage</option><option value="nature">Nature</option><option value="spiritual">Spiritual</option><option value="city">City</option></select></label>
+    <label>Max budget<select id="qbudget"><option value="0">Any</option><option value="10000">Up to ₹10,000</option><option value="20000">Up to ₹20,000</option><option value="35000">Up to ₹35,000</option></select></label>
+    <button class="btn sun" type="submit">Find trips</button>
+  </form>
+  <datalist id="places"></datalist>
+  <div class="stats"><div><b>28</b>Indian states</div><div><b>24</b>countries</div><div><b>₹4,499</b>trips from</div><div><b>24/7</b>trip support</div></div>
+</div></div>
+
+<section id="trips"><div class="wrap">
+  <h2>Choose your trip</h2>
+  <p class="sub">Prices are per person and already discounted. Sample rates. We confirm the final price, flights and visas with you.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tin" aria-selected="true">🇮🇳 India: all 28 states</button>
+    <button role="tab" id="tworld" aria-selected="false">🌍 International: 24 low-cost trips</button>
+  </div>
+  <div class="tools">
+    <div class="chips" role="group" aria-label="Filter by type">
+      <button type="button" data-t="all" aria-pressed="true">All</button><button type="button" data-t="beach" aria-pressed="false">Beach</button><button type="button" data-t="hills" aria-pressed="false">Hills</button><button type="button" data-t="heritage" aria-pressed="false">Heritage</button><button type="button" data-t="nature" aria-pressed="false">Nature</button><button type="button" data-t="spiritual" aria-pressed="false">Spiritual</button><button type="button" data-t="city" aria-pressed="false">City</button>
+    </div>
+    <label>Sort <select id="sort"><option value="pop">Popular</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="days">Shortest trip</option><option value="az">A to Z</option></select></label>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+  <div class="more"><button class="btn line" id="more" type="button">Show more trips</button></div>
+</div></section>
+
+<section id="how" style="background:var(--card)"><div class="wrap">
+  <h2>How booking works <span class="hi">· बुकिंग कैसे करें</span></h2><p class="sub">Three easy steps from idea to boarding pass.</p>
+  <div class="steps">
+    <div><b>Pick your trip</b><p>Search by place, type or budget and choose a package you like.</p></div>
+    <div><b>Send your request</b><p>Fill the booking form. It opens WhatsApp or email with all details ready.</p></div>
+    <div><b>Confirm and pay</b><p>We confirm hotels and dates, then you pay by UPI or bank transfer and pack your bags.</p></div>
+  </div>
+  <div class="trust"><span>✔ No hidden charges</span><span>✔ UPI · Cards · Bank transfer</span><span>✔ Free date change</span><span>✔ Visa guidance</span></div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2>Why travel with Safar</h2><p class="sub">Simple planning, honest prices, support on every trip.</p>
+  <div class="why">
+    <div><span>🏨</span><b>Hotels included</b><p>Checked, clean stays in good locations.</p></div>
+    <div><span>🚗</span><b>Private transfers</b><p>Airport and sightseeing pickups arranged.</p></div>
+    <div><span>🛂</span><b>Visa help</b><p>We guide you through documents for every country.</p></div>
+    <div><span>💬</span><b>24/7 support</b><p>Call or WhatsApp us at any hour of your trip.</p></div>
+    <div><span>👥</span><b>Group discounts</b><p>Save up to 10% when you travel together.</p></div>
+    <div><span>🔁</span><b>Free date change</b><p>Change your travel date up to 7 days before.</p></div>
+  </div>
+</div></section>
+
+<section id="quotes" style="background:var(--card)"><div class="wrap">
+  <h2>Travel quotes <span class="hi">· सफ़र की बातें</span></h2><p class="sub">Words to start your journey. शब्द जो सफ़र की चाह जगा दें।</p>
+  <div class="qch" id="qch"><button type="button" data-l="all" aria-pressed="true">All</button><button type="button" data-l="en" aria-pressed="false">English</button><button type="button" data-l="hi" aria-pressed="false">हिन्दी</button></div>
+  <div class="qgrid" id="qgrid"></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <h2>What travellers say</h2><p class="sub">Real feedback from recent trips.</p>
+  <div class="quote" id="quote" aria-live="polite"></div>
+  <div class="qnav"><button class="btn line" id="prev" type="button">Previous</button><button class="btn line" id="next" type="button">Next</button></div>
+</div></section>
+
+<section id="tips" style="background:var(--card)"><div class="wrap">
+  <h2>Travel tips <span class="hi">· यात्रा सुझाव</span></h2><p class="sub">Small things that make a big difference.</p>
+  <div class="why">
+    <div><span>📅</span><b>Book early</b><p>Plan 3 to 4 weeks ahead for better hotels and prices. जल्दी बुकिंग, बेहतर दाम।</p></div>
+    <div><span>🎒</span><b>Pack light</b><p>Carry layers, a power bank and a copy of your ID. हल्का सामान, आसान सफ़र।</p></div>
+    <div><span>🌦️</span><b>Check the season</b><p>Hills are best in summer, beaches in winter. मौसम देखकर चलें।</p></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2><p class="sub">Quick answers before you book.</p>
+  <details><summary>How do I book a package?</summary><p>Tap Book now on any trip, fill in your details and send them by WhatsApp or email. We reply with confirmation and payment steps.</p></details>
+  <details><summary>Do you help with visas?</summary><p>Yes. We share the document list and guide you for every international trip. Visa fees are paid separately.</p></details>
+  <details><summary>What is included in the price?</summary><p>Hotel stay, breakfast, transfers and listed sightseeing. Flights are extra unless we confirm otherwise.</p></details>
+  <details><summary>Can I customise a trip?</summary><p>Yes. Add your wishes in the notes box and we will adjust hotels, days and activities.</p></details>
+  <details><summary>What if I need to cancel?</summary><p>Cancel up to 15 days before travel for a refund minus a small booking fee.</p></details>
+</div></section>
+
+<section id="contact" style="background:var(--card)"><div class="wrap">
+  <h2>Contact us</h2><p class="sub">Ask a question or plan a custom trip.</p>
+  <div class="contact">
+    <div class="info">
+      <h3>Safar Holidays</h3>
+      <div>📞 <a href="tel:+916200998924">+91 62009 98924</a></div>
+      <div>✉️ <a href="mailto:syedibrahim8445@gmail.com">syedibrahim8445@gmail.com</a></div>
+      <div>💬 <a href="https://wa.me/916200998924" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+      <div>🕘 Open daily, 9 am to 9 pm</div>
+    </div>
+    <form id="cform" novalidate>
+      <label>Name<input id="cn" autocomplete="name"><span class="err" id="e1"></span></label>
+      <label>Phone or email<input id="cc" autocomplete="email"><span class="err" id="e2"></span></label>
+      <label>Message<textarea id="cm" rows="4"></textarea><span class="err" id="e3"></span></label>
+      <div><button class="btn" type="submit">Send message</button></div>
+      <p class="msg" id="cstat" role="status"></p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><b>Popular in India</b><a href="#trips" data-s="Goa">Goa</a><a href="#trips" data-s="Kerala">Kerala</a><a href="#trips" data-s="Rajasthan">Rajasthan</a><a href="#trips" data-s="Meghalaya">Meghalaya</a></div>
+    <div><b>Popular abroad</b><a href="#trips" data-s="Nepal">Nepal</a><a href="#trips" data-s="Thailand">Thailand</a><a href="#trips" data-s="Indonesia">Bali</a><a href="#trips" data-s="UAE">Dubai</a></div>
+    <div><b>Quick links</b><a href="#quotes">Travel quotes</a><a href="#faq">FAQ</a><a href="#contact">Contact us</a><a href="tel:+916200998924">Call us</a></div>
+  </div>
+  <p>Pay by UPI · Cards · Net banking · Bank transfer</p>
+  <p><b>Safar Holidays</b> · <a href="tel:+916200998924">+91 62009 98924</a> · <a href="mailto:syedibrahim8445@gmail.com">syedibrahim8445@gmail.com</a></p>
+  <form id="news" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:14px auto" novalidate>
+    <input id="ne" type="email" placeholder="Email for travel deals" aria-label="Email for travel deals" style="flex:1;min-width:200px"><button class="btn sun" type="submit">Subscribe</button>
+  </form>
+  <p class="msg" id="nstat" role="status" style="color:#9be8b9"></p>
+  <small>© <span id="yr"></span> Safar Holidays. All rights reserved.</small>
+</div></footer>
+
+<div class="fab"><a href="https://wa.me/916200998924" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a><button id="top" type="button" aria-label="Back to top">↑</button></div>
+
+<dialog id="dlg" aria-labelledby="dt"><div class="dlg">
+  <button class="close" id="dclose" type="button" aria-label="Close">×</button>
+  <h3 id="dt">Book your trip</h3>
+  <label>Package<select id="bp"></select></label>
+  <div class="row"><label>Your name<input id="bn" autocomplete="name"></label><label>Phone<input id="bph" type="tel" autocomplete="tel"></label></div>
+  <div class="row"><label>Travel date<input id="bd" type="date"></label><label>Travellers<input id="bt" type="number" min="1" max="30" value="2"></label></div>
+  <label>Notes (optional)<textarea id="bnote" rows="2" placeholder="Hotel type, special requests..."></textarea></label>
+  <label>Coupon code (optional)<input id="bcoupon" placeholder="Try SAFAR5"></label>
+  <div class="total"><div><span>Discounts</span><span id="bdisc">None</span></div><div><span>Estimated total</span><span id="btotal">₹0</span></div></div>
+  <p class="err" id="berr" role="alert"></p>
+  <div class="acts"><button class="btn wa" id="bwa" type="button">Book on WhatsApp</button><button class="btn line" id="bem" type="button">Send by email</button></div>
+</div></dialog>
+
+<script>
+const PHONE="916200998924",EMAIL="syedibrahim8445@gmail.com";
+const inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const $=id=>document.getElementById(id);
+// Data format: place | trip name | type | days | price per person (INR) | emoji | short description
+const IN=`Andhra Pradesh|Araku Valley and Vizag|hills|4|11500|🚂|Coffee hills, scenic train and RK Beach
+Arunachal Pradesh|Tawang Monastery Trail|hills|6|26000|🛕|Sela Pass, Tawang monastery and snow lakes
+Assam|Kaziranga Safari|nature|4|15500|🦏|One-horned rhino safari and tea gardens
+Bihar|Bodh Gaya and Nalanda|spiritual|3|8500|☸️|Mahabodhi Temple and ancient university ruins
+Chhattisgarh|Bastar Waterfalls|nature|4|12000|💦|Chitrakote Falls, caves and tribal villages
+Goa|Goa Beach Escape|beach|4|14500|🏖️|Beaches, old forts and a sunset cruise
+Gujarat|Rann of Kutch|heritage|4|16500|🐪|White desert, craft villages and Dwarka
+Haryana|Morni Hills and Kurukshetra|spiritual|3|7500|🛕|Hill views, Brahma Sarovar and heritage stops
+Himachal Pradesh|Manali and Shimla|hills|5|17500|🏔️|Snow points, Solang Valley and Mall Road
+Jharkhand|Netarhat and Ranchi Falls|nature|3|8000|🌲|Sunrise point, waterfalls and forest stays
+Karnataka|Coorg and Mysuru|nature|4|13500|☕|Coffee estates, grand palace and elephants
+Kerala|Kerala Backwaters|nature|5|21000|🛶|Houseboat night, Munnar and Alleppey
+Madhya Pradesh|Khajuraho and Pench|heritage|5|18500|🐅|Temple art, tiger safari and Orchha
+Maharashtra|Ajanta, Ellora and Mumbai|heritage|5|17000|🕌|Cave temples, Gateway of India and street food
+Manipur|Loktak Lake Escape|nature|4|19000|🛶|Floating islands, Imphal markets and Moirang
+Meghalaya|Meghalaya Living Roots|nature|5|20500|🌉|Root bridges, Cherrapunji and Dawki river
+Mizoram|Aizawl and Hill Trails|hills|4|19500|⛰️|Hill capital, Vantawng Falls and local food
+Nagaland|Kohima and Dzukou Valley|heritage|5|21500|🦜|Tribal heritage villages and valley trek
+Odisha|Puri, Konark and Chilika|spiritual|4|12500|🌅|Jagannath Temple, Sun Temple and dolphins
+Punjab|Amritsar and Wagah|spiritual|3|9500|🕍|Golden Temple, Wagah ceremony and dhabas
+Rajasthan|Royal Rajasthan|heritage|6|24500|🏰|Jaipur forts, Udaipur lakes and desert safari
+Sikkim|Gangtok and Nathu La|hills|5|22500|🏔️|Tsomgo Lake, monasteries and Kanchenjunga views
+Tamil Nadu|Madurai and Ooty|spiritual|5|14500|🛕|Meenakshi Temple, Ooty hills and toy train
+Telangana|Hyderabad Heritage|city|3|9000|🕌|Charminar, Golconda Fort and biryani trail
+Tripura|Agartala and Neermahal|heritage|4|14000|🏯|Water palace, Unakoti carvings and lakes
+Uttar Pradesh|Agra and Varanasi|heritage|4|13500|🕌|Taj Mahal, Ganga aarti and old city
+Uttarakhand|Rishikesh and Nainital|hills|5|15500|🧘|Rafting, yoga, lakes and Himalayan views
+West Bengal|Darjeeling and Kolkata|hills|5|16500|🍵|Tea hills, toy train and heritage Kolkata`;
+const WORLD=`Nepal|Kathmandu and Pokhara|hills|5|12500|🏔️|Temples, lakeside Pokhara and Himalayan views
+Bhutan|Bhutan Highlights|hills|5|26000|🛕|Tiger's Nest, Thimphu and Paro valley
+Sri Lanka|Sri Lanka Tour|beach|6|23500|🐘|Kandy, Ella train ride and south coast beaches
+Thailand|Bangkok and Pattaya|city|5|24500|🛺|Temples, floating markets and an island trip
+Vietnam|Hanoi to Ha Long Bay|nature|6|32000|⛵|Old quarter, Ha Long cruise and street food
+Indonesia|Bali Getaway|beach|5|30500|🌴|Ubud temples, rice terraces and beaches
+Malaysia|Kuala Lumpur and Langkawi|city|5|28000|🏙️|Petronas Towers, Batu Caves and island beaches
+Singapore|Singapore Sampler|city|4|38000|🦁|Gardens by the Bay, Sentosa and Night Safari
+UAE|Dubai Highlights|city|4|35500|🌆|Burj Khalifa, desert safari and marina cruise
+Cambodia|Siem Reap Temples|heritage|4|29500|🛕|Angkor Wat sunrise and floating villages
+Laos|Luang Prabang Escape|nature|5|28500|🛶|Waterfalls, Mekong sunsets and monasteries
+Philippines|Palawan Islands|beach|5|39000|🏝️|El Nido lagoons and island hopping
+Mauritius|Mauritius Getaway|beach|5|42000|🐠|Blue bays, sugar estates and a catamaran day
+Turkey|Istanbul and Cappadocia|heritage|6|46500|🎈|Hagia Sophia, bazaars and balloon views
+Georgia|Tbilisi and Kazbegi|hills|5|36500|🍇|Old town, wine country and mountain views
+Armenia|Yerevan and Lake Sevan|heritage|5|34500|⛪|Ancient monasteries, brandy tasting and lakes
+Azerbaijan|Baku City Break|city|4|33500|🔥|Flame Towers, old city and Gobustan
+Kazakhstan|Almaty Mountains|hills|5|38500|🏔️|Big Almaty Lake, Charyn Canyon and cable cars
+Uzbekistan|Silk Road Cities|heritage|6|37000|🕌|Samarkand, Bukhara and Registan Square
+Egypt|Cairo and Nile|heritage|6|44500|🐫|Pyramids, Nile cruise and Luxor temples
+Jordan|Petra and Wadi Rum|heritage|5|49000|🏜️|Rose-red Petra and a desert camp
+Oman|Muscat and Wahiba Sands|nature|5|41500|🕌|Grand Mosque, wadis and desert camp
+Hong Kong|Hong Kong and Macau|city|5|43500|🌃|Victoria Peak, Ladies Market and Macau old town
+Maldives|Maldives Guesthouse Stay|beach|4|46000|🏝️|Local island stay, snorkelling and sandbank trip`;
+const HOT=["Goa","Kerala","Himachal Pradesh","Rajasthan","Meghalaya","UAE","Indonesia","Thailand","Sri Lanka","Vietnam"];
+const F=0.62; // price factor: lower number = cheaper trips
+let P=[];
+[[IN,"in"],[WORLD,"world"]].forEach(([txt,scope])=>txt.split("\n").forEach(l=>{
+  const [loc,n,t,d,p,e,x]=l.split("|"),id=P.length+1;
+  const np=Math.round(+p*F/500)*500-1,op=Math.round(+p/500)*500-1;
+  P.push({id,scope,loc,n,t,d:+d,p:np,o:op,off:Math.round((1-np/op)*100),r:(4.2+((id*7)%8)/10).toFixed(1),rv:80+(id*53)%900,e,x,hue:(id*47)%360,hot:HOT.includes(loc)?1:0,low:scope==="in"?np<=8000:np<=22000});
+}));
+const TYPE={beach:"Beach",hills:"Hills",heritage:"Heritage",nature:"Nature",spiritual:"Spiritual",city:"City"};
+// state
+let scope="in",type="all",onlyWish=false,shown=12,wish=new Set();
+try{wish=new Set(JSON.parse(localStorage.getItem("wish")||"[]"))}catch(e){}
+function saveWish(){try{localStorage.setItem("wish",JSON.stringify([...wish]))}catch(e){}$("wishCount").textContent=wish.size}
+function list(){
+  const q=$("q").value.trim().toLowerCase(),qt=$("qtype").value,b=+$("qbudget").value,s=$("sort").value;
+  const searching=q!=="";
+  let r=P.filter(p=>(searching||onlyWish||p.scope===scope)&&(type==="all"||p.t===type)&&(qt==="all"||p.t===qt)&&(!b||p.p<=b)&&(!searching||(p.loc+" "+p.n+" "+p.x).toLowerCase().includes(q))&&(!onlyWish||wish.has(p.id)));
+  return r.sort((a,c)=>s==="low"?a.p-c.p:s==="high"?c.p-a.p:s==="days"?a.d-c.d:s==="az"?a.loc.localeCompare(c.loc):c.hot-a.hot||a.id-c.id);
+}
+function render(){
+  const r=list(),vis=r.slice(0,shown);
+  $("count").textContent=r.length+" trip"+(r.length===1?"":"s")+(onlyWish?" saved":"")+" found";
+  $("grid").innerHTML=r.length?vis.map(p=>`<article class="pkg"><div class="pic" style="background:linear-gradient(135deg,hsl(${p.hue} 72% 52%),hsl(${(p.hue+45)%360} 60% 30%))" aria-hidden="true">${p.e}<span class="loc">${p.loc}</span><button class="heart" data-w="${p.id}" aria-label="Save ${p.n}" aria-pressed="${wish.has(p.id)}">${wish.has(p.id)?"♥":"♡"}</button>${p.low?'<span class="low">Low cost</span>':""}</div><div class="body"><h3>${p.n}</h3><div class="meta"><span>${p.d} days</span><span>${TYPE[p.t]}</span></div><div class="rate"><b>★ ${p.r}</b> (${p.rv} reviews)</div><p>${p.x}</p><div class="inc">🏨 Hotel · 🍳 Breakfast · 🚗 Transfers</div><div class="sep"></div></div><div class="price"><div><s>${inr(p.o)}</s><span class="off">${p.off}% OFF</span><br><b>${inr(p.p)}</b> <small>per person</small></div><button class="btn" data-b="${p.id}">Book now</button></div></article>`).join(""):'<div class="empty">No trips match. Try another type or a higher budget.</div>';
+  $("more").style.display=r.length>shown?"inline-flex":"none";
+}
+function reset(){shown=12;render()}
+function setScope(s){scope=s;onlyWish=false;$("tin").setAttribute("aria-selected",s==="in");$("tworld").setAttribute("aria-selected",s==="world");reset()}
+$("tin").onclick=()=>setScope("in");$("tworld").onclick=()=>setScope("world");
+document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>{type=b.dataset.t;onlyWish=false;document.querySelectorAll(".chips button").forEach(x=>x.setAttribute("aria-pressed",x===b));reset()});
+$("sort").onchange=reset;
+$("more").onclick=()=>{shown+=12;render()};
+$("search").onsubmit=e=>{e.preventDefault();onlyWish=false;reset();$("trips").scrollIntoView()};
+$("wishBtn").onclick=()=>{onlyWish=!onlyWish;reset();$("trips").scrollIntoView()};
+$("grid").onclick=e=>{
+  const w=e.target.closest("[data-w]"),b=e.target.closest("[data-b]");
+  if(w){const id=+w.dataset.w;wish.has(id)?wish.delete(id):wish.add(id);saveWish();render()}
+  if(b)openBook(+b.dataset.b);
+};
+$("places").innerHTML=[...new Set(P.map(p=>p.loc))].map(l=>`<option value="${l}">`).join("");
+// booking
+const dlg=$("dlg");
+$("bp").innerHTML=`<optgroup label="India">${P.filter(p=>p.scope==="in").map(o=>`<option value="${o.id}">${o.loc}: ${o.n}</option>`).join("")}</optgroup><optgroup label="International">${P.filter(p=>p.scope==="world").map(o=>`<option value="${o.id}">${o.loc}: ${o.n}</option>`).join("")}</optgroup>`;
+function calc(){const p=P.find(x=>x.id==$("bp").value),n=Math.max(1,+$("bt").value||1),g=n>=6?.1:n>=4?.05:0,cp=$("bcoupon").value.trim().toUpperCase()==="SAFAR5"?.05:0,d=g+cp;return{p,n,d,total:p.p*n*(1-d)}}
+function total(){const c=calc();$("bdisc").textContent=c.d?Math.round(c.d*100)+"% off":"None";$("btotal").textContent=inr(c.total)}
+function openBook(id){$("bp").value=id;$("berr").textContent="";total();$("bd").min=new Date().toISOString().slice(0,10);dlg.showModal()}
+["bp","bt","bcoupon"].forEach(i=>$(i).oninput=total);
+$("dclose").onclick=()=>dlg.close();
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+function bookText(){
+  const c=calc(),n=$("bn").value.trim(),ph=$("bph").value.trim(),d=$("bd").value;
+  if(!n)return $("berr").textContent="Enter your name.",null;
+  if(!/^[0-9+\s-]{10,15}$/.test(ph))return $("berr").textContent="Enter a valid phone number with 10 digits.",null;
+  if(!d)return $("berr").textContent="Choose your travel date.",null;
+  $("berr").textContent="";
+  return encodeURIComponent(`Booking request\nPackage: ${c.p.loc}: ${c.p.n}\nTravel date: ${d}\nTravellers: ${c.n}\nEstimated total: Rs. ${Math.round(c.total).toLocaleString("en-IN")}\nName: ${n}\nPhone: ${ph}\nNotes: ${$("bnote").value.trim()||"None"}`);
+}
+$("bwa").onclick=()=>{const t=bookText();if(t)window.open(`https://wa.me/${PHONE}?text=${t}`,"_blank")};
+$("bem").onclick=()=>{const t=bookText();if(t)location.href=`mailto:${EMAIL}?subject=Booking%20request&body=${t}`};
+// quotes
+const Q=[["en","Not all those who wander are lost.","J.R.R. Tolkien"],["en","A journey of a thousand miles begins with a single step.","Lao Tzu"],["en","Take only memories, leave only footprints.","Travel saying"],["en","Travel is the only thing you buy that makes you richer.","Travel saying"],
+["hi","सफ़र में धूप तो होगी, जो चल सको तो चलो।","निदा फ़ाज़ली"],["hi","चरैवेति, चरैवेति। चलते रहो, चलते रहो।","ऐतरेय ब्राह्मण"],["hi","अतिथि देवो भवः। मेहमान भगवान समान है।","तैत्तिरीय उपनिषद"],["hi","जहाँ चाह, वहाँ राह।","कहावत"]];
+let ql="all";
+function showQ(){$("qgrid").innerHTML=Q.filter(q=>ql==="all"||q[0]===ql).map(q=>`<div class="qc"><p${q[0]==="hi"?' class="hi"':""}>“${q[1]}”</p><small>${q[2]}</small></div>`).join("")}
+document.querySelectorAll("#qch button").forEach(b=>b.onclick=()=>{ql=b.dataset.l;document.querySelectorAll("#qch button").forEach(x=>x.setAttribute("aria-pressed",x===b));showQ()});
+document.querySelectorAll("[data-s]").forEach(a=>a.addEventListener("click",()=>{$("q").value=a.dataset.s;onlyWish=false;reset()}));
+// reviews
+const R=[["Amazing Kerala trip. The houseboat was the highlight and everything ran on time.","Aisha, Hyderabad"],["Our Meghalaya plan was perfect. Great stays and a friendly driver all week.","Rahul, Patna"],["Booked Bali in one evening on WhatsApp. Clear prices and no surprises.","Sana, Bengaluru"],["Nepal trip under budget and so well organised. Will book again.","Imran, Kolkata"],["बहुत बढ़िया सफ़र रहा। होटल और ड्राइवर दोनों शानदार थे।","Pooja, Lucknow"],["कम बजट में पूरा परिवार घूम आया। धन्यवाद Safar Holidays!","Vikram, Delhi"]];
+let ri=0;const showR=()=>{$("quote").innerHTML=`<p>“${R[ri][0]}”</p><b>${R[ri][1]}</b> <span aria-label="5 stars">★★★★★</span>`};
+$("prev").onclick=()=>{ri=(ri+R.length-1)%R.length;showR()};$("next").onclick=()=>{ri=(ri+1)%R.length;showR()};
+// forms
+const mailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+$("cform").onsubmit=e=>{e.preventDefault();
+  const n=$("cn").value.trim(),c=$("cc").value.trim(),m=$("cm").value.trim();
+  const a=!!n,b=mailOk(c)||/^[0-9+\s-]{10,15}$/.test(c),d=m.length>=10;
+  $("e1").textContent=a?"":"Enter your name.";$("e2").textContent=b?"":"Enter a valid email or 10-digit phone number.";$("e3").textContent=d?"":"Write at least 10 characters.";
+  if(!(a&&b&&d)){$("cstat").textContent="";return}
+  location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("Enquiry from "+n)}&body=${encodeURIComponent(m+"\n\nContact: "+c)}`;
+  $("cstat").className="msg ok";$("cstat").textContent="Thanks, "+n+". Your email app is opening to send this message.";$("cform").reset()};
+$("news").onsubmit=e=>{e.preventDefault();const v=$("ne").value.trim();$("nstat").textContent=mailOk(v)?"Subscribed. Look out for our next deals.":"Enter an email like name@example.com.";if(mailOk(v))$("news").reset()};
+// hero word, theme, top button, year
+const words=["Goa","Meghalaya","Bali","Kerala","Dubai","Ladakh","Vietnam","Rajasthan"];let wi=0;
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(()=>{const w=$("word");w.style.opacity=0;setTimeout(()=>{wi=(wi+1)%words.length;w.textContent=words[wi];w.style.opacity=1},350)},2400);
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
+$("theme").onclick=()=>{const dark=getComputedStyle(root).getPropertyValue("--bg").trim()==="#110f2b";const n=dark?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}};
+addEventListener("scroll",()=>{$("top").style.display=scrollY>500?"grid":"none"});
+$("top").onclick=()=>scrollTo({top:0});
+$("yr").textContent=new Date().getFullYear();
+saveWish();render();showR();showQ();
+</script>
+</body>
+</html>
